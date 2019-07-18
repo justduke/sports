@@ -26,10 +26,10 @@
       <section id="contant" class="contant main-heading team">
          <div class="row">
             <div class="container">
-               <div class="col-md-9">
+               <div class="col-md-8">
                   
 
-                  <div class="feature-post small-blog">
+                  <div class="feature-post small-blog col-md-9">
                      
                      <div class="col-md-12 ">
                         <div style="overflow-x:auto;" class="feature-cont ">
@@ -40,6 +40,7 @@
                               <th>Time</th>
                               <th>Place</th>
                               <th>Race Type</th>
+                              <th>More</th>
 
                            </thead>
                            <?php
@@ -58,11 +59,11 @@
                               <?php echo'
                               <tr>
                               <td><img src="images/img-06.png" height="20px"alt=""></td>
-                              <td><a style="color:blue;" href="'.$row['a_id'].'">'.$row['fname'].' '.$row['lname'].'</a></td>
+                              <td><a style="color:blue;" href="#list'.$row['a_id'].'" data-toggle="modal" data-target="#myModalone">'.$row['fname'].' '.$row['lname'].'</a></td>
                               <td>'.$row['time'].'</td>
                               <td>'.$row['host_name'].'</td>
                               <td>'.$row['race_type'].'</td>
-                              
+                              <td><a style="color:blue;" href="#list'.$row['a_id'].'" data-toggle="modal" data-target="#myModalone">More</a></td>
                               </tr>';
                               }
                               ?>
@@ -75,39 +76,13 @@
                            </table>
                         </div>
                      </div>
-                  </div>
-
-
-                  <div class="feature-post small-blog">
-                     <div class="col-md-5">
-                        <div class="feature-img">
-                           <img src="images/post2.jpg" class="img-responsive" alt="#" />
-                        </div>
-                     </div>
-                     <div class="col-md-7" id="list<?php echo''.$row['a_id'].'';?>">
-                        <div class="feature-cont">
-                           <div class="post-info">
-                              <img src="images/profile-img.png" alt="#" />
-                              <span>
-                                 <h4>Duke</h4>
-                                 <h5><?php echo''.$row['date'].'';?></h5>
-                              </span>
-                           </div>
-                           <div class="post-heading">
-                              <h3>A. FELIX RECORD <span class="color-yellow">10:45 sec</span></h3>
-                              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
-							   et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est 
-							   laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-                              <div class="full">
-                                 <a class="btn" href="#">Read More</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>    
-                  </div>
-
-                           
+                  
+                 
+                  
+                  
                </div>
+               </div>
+               
                <div class="col-md-3">
                   <div class="blog-sidebar">
                      <div class="search-bar-blog color-theme">
@@ -119,7 +94,7 @@
                   </div>
                   <div class="blog-sidebar">
                      <h4 class="heading">Top Categories</h4>
-                     <div class="category-menu">
+                     <div class="category-menu display-flexible">
                         <ul>
                            <li><a href="#">100 Meters</a></li>
                            <li><a href="#">4 X 4 Relay</a></li>
@@ -132,10 +107,78 @@
                         </ul>
                      </div>
                   </div>
+               
+
+                  
+                  
+
+                  
+                  
+                  <div class="modals-list mg-t-30">
+                  <div class="modals-single">
+                  <div class="modals-default-cl">
+                                
+                  <?php
+                  // while ($row['a_id']== !''){
+                    ?>
+                  
+                                
+                                <div class="modal fade" id="myModalone" role="dialog">
+                                    <div class="modal-dialog modals-default">
+                                    <div class="modal-content">
+                                            <div class="modal-header">
+                                                
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <div class="post-info">
+                                                    <img src="images/profile-img.png" alt="#" />
+                                                    <span>
+                                                     <h4>Duke</h4>
+                                                      <h5><?php echo''.$row['date'].'';?></h5>
+                                                      <?php echo''.$row['a_id'].'';?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="modal-body">
+                                                
+                                                   <div class="feature-post small-blog">
+                                                   <div class="col-md-5">
+                                                      <div class="feature-img">
+                                                         <img src="images/post2.jpg" class="img-responsive img-rounded" alt="#" />
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-md-7" id="list">
+                                                      <div class="feature-cont">
+                                                         
+                                                         <div class="post-heading">
+                                                            <h3>A. FELIX RECORD <span class="color-yellow">10:45 sec</span></h3>
+                                                            <p><?php
+                                                               echo $row['a_run_det'];
+                                                            ?></p>
+                                                            
+                                                         </div>
+                                                      </div>
+                                                   </div>    
+                                                   </div>
+                                            
+                                             </div>
+                                            <div class="modal-footer">
+                                                
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                    </div>
+                                    </div>
+                                </div>
+                  <?php
+                  // }
+                  ?>
+                           
+                  </div>
+                  </div>
                  
-                  
-                  
+                  </div>
                </div>
+
+               
             </div>
          </div>
       </section>
