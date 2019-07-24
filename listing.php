@@ -1,4 +1,12 @@
 <?php require'header.php';?>
+
+<script>
+   // $(function(){
+   //    $("td").load(){
+   //       $("td").show();
+   //    }
+   // });
+</script>
    <body class="game_info" data-spy="scroll" data-target=".header">
       <!-- LOADER -->
       <div id="preloade ">
@@ -56,19 +64,36 @@
 
                            ?>
                            <tbody>
-                              <?php echo'
+
+
+                              <?php
+                               echo'
                               <tr>
                               <td><img src="images/img-06.png" height="20px"alt=""></td>
-                              <td><a style="color:blue;" href="#list'.$row['a_id'].'" data-toggle="modal" data-target="#myModalone">'.$row['fname'].' '.$row['lname'].'</a></td>
-                              <td>'.$row['time'].'</td>
+                              <td><a style="color:blue;"  data-id="'.$row['a_id'].'" data-toggle="modal" data-target="#myModalone">'.$row['fname'].' '.$row['lname'].'</a></td>
+                              ';?>
+                              <td>
+                              <script>
+                                 $(function(){
+                                    $("table").ready(function(){
+                                       $("td").eq(2).text(
+                                          "<?php echo' '.$row['time'].''; ?>"
+                                          );
+                                    })
+                                 });
+                                 
+                                 </script>
+                              </td>
+                              <?php echo'
                               <td>'.$row['host_name'].'</td>
                               <td>'.$row['race_type'].'</td>
-                              <td><a style="color:blue;" href="#list'.$row['a_id'].'" data-toggle="modal" data-target="#myModalone">More</a></td>
+                              <td><a style="color:blue;" data-id="'.$row['a_id'].'"  data-toggle="modal" data-target="#myModalone">More</a></td>
                               </tr>';
+                              
                               }
                               ?>
-
                              
+                            
                               
                            </tbody>   
                            
@@ -154,7 +179,10 @@
                                                             <p><?php
                                                                echo $row['a_run_det'];
                                                             ?></p>
-                                                            
+                                                             <div id="demo">
+                                                                  duh
+                                                               </div>
+                                                              
                                                          </div>
                                                       </div>
                                                    </div>    
@@ -168,6 +196,20 @@
                                     </div>
                                     </div>
                                 </div>
+                                <script>
+                                 //   $(function(){
+                                 //   var  e= $("td").parent();
+                                 //   e.css("border","2px solid blue");
+                                     
+                                 //    var p = $("<p></p>").text("Huduma ya kanjo");
+                                 //    $("div.post-heading").text(p);
+                                 //   });
+                                </script>
+                                 <script>
+                                    $("#demo").ready(function() {
+                                       $("#demo").text("<?php echo' '.$row['time'].''; ?>");
+                                       });
+                                 </script>
                   <?php
                   // }
                   ?>
@@ -181,7 +223,8 @@
                
             </div>
          </div>
-      </section>
+      </section> 
+     
       
       <?php require'footer.php';
                               
