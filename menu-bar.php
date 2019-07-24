@@ -15,13 +15,9 @@
                            <!-- button section -->
                            <ul class="login">
                               <li class="login-modal">
-                                 <a href="#" class="login"><i class="fa fa-user"></i>Login</a>
+                                 <a data-toggle="modal" data-target="#login" id="login-modal" role="dialog"><i class="fa fa-user"></i>Login</a>
                               </li>
-                              <li>
-                                 <div class="cart-option">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i>Register</a>
-                                 </div>
-                              </li>
+                              
                            </ul>
                            <!-- end button section -->
                         </div>
@@ -42,14 +38,30 @@
                                        <span class="icon-bar"></span>
                                        <span class="icon-bar"></span>
                                        </button>
-                                       <a class="navbar-brand" href="#">Menu</a>
+                                       <a class="navbar-brand" href="#"> Menu Ba</a>
                                     </div>
                                     <div class="collapse navbar-collapse js-navbar-collapse">
                                        <ul class="nav navbar-nav">
-                                          <li class="active"><a href="index.php">Home</a></li>
-                                          <li><a href="about.php">About</a></li>
-                                          <li><a href="listing.php">Listings</a></li>
-                                          <li><a href="contact.php">Contact</a></li>
+                                          <?php if(isset($_GET['home'])){?>
+                                          <li class="active"><a href="index.php?home">Home</a></li>
+                                          <?}
+                                          else{ ?>
+                                              <!-- <li ><a href="index.php?home">Home</a></li> -->
+                                         <?php }?>
+                                         <?php if(isset($_GET['about'])){?>
+                                          <li><a class="active" href="index.php?about">About</a></li>
+                                          <?}
+                                          else{ ?>
+                                              <!-- <li><a href="index.php?about">About</a></li> -->
+                                         <?php }?>
+                                         <?php if(isset($_GET['listing'])){?>
+                                          <li><a class="active" href="index.php?listing">Listings</a></li>
+                                          <?}
+                                          else{ ?>
+                                              <!-- <li><a href="index.php?listing">Listings</a></li> -->
+                                         <?php }?>
+                                          
+                                          
                                        </ul>
                                     </div>
                                     <!-- /.nav-collapse -->
@@ -64,6 +76,38 @@
                                        </div>
                                     </div>
                                  </div>
+
+                              
+
+                                <div class="modals-list mg-t-30">
+                                 <div class="modals-single">
+                                 <div class="modals-default-cl">
+
+                                 <div class="modal fade" id="login" role="dialog">
+                                  <div class="modal-dialog modals-default">
+                                 <div class="modal-content"  >
+                                 <div class="modal-header">
+                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                       <h4>Login</h4> 
+                                    </div>
+                                    <form>
+                                    <div class="modal-body">
+                                       <input type="text" name="username" id="username" placeholder="Username">
+                                       <input type="password" name="pass" id="pass" placeholder="Password">
+                                    </div>
+                                    <div class="modal-footer">
+                                       <button class="btn btn-submit btn-submit" type="submit" id="submit" Value="LogIn">Login</button>
+                                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    </form>  
+                                 </div>
+                                 </div>
+                                 </div>
+                                 </div>
+                                 </div>
+                                 </div>
+                                 
+
                               </div>
                            </div>
                         </div>

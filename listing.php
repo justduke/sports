@@ -25,8 +25,8 @@
             <div class="container">
                <h3>Time Listing</h3>
                <ul class="breadcrumb">
-                  <li><a href="index.php">Home</a></li>
-                  <li class="active">Listings</li>
+                  <li><a href="index.php?home">Home</a></li>
+                  <li class="active" ><a class="active" href="#">Listings</a></li>
                </ul>
             </div>
          </div>
@@ -87,7 +87,7 @@
                               <?php echo'
                               <td>'.$row['host_name'].'</td>
                               <td>'.$row['race_type'].'</td>
-                              <td><a style="color:blue;" data-id="'.$row['a_id'].'"  data-toggle="modal" data-target="#myModalone">More</a></td>
+                              <td><button class="btn btn-success"><a style="color:blue;" data-id="'.$row['a_id'].'"  data-toggle="modal" data-target="#myModalone">More</a></button></td>
                               </tr>';
                               
                               }
@@ -226,7 +226,7 @@
       </section> 
      
       
-      <?php require'footer.php';
+      
                               
       ?>
 
